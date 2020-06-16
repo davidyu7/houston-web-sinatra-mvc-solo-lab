@@ -1,0 +1,22 @@
+<h1> Puppies: </h1>
+<table>
+    <tr>
+        <th>Name</th> <th>Breed</th>
+    </tr>
+
+    <% @puppies.each do |puppy|%>
+        <tr>
+            <td>
+                <a href='/puppy/<%=puppy.id%>'><%= puppy.name%></a></td>
+            <td><%= puppy.breed%></td>
+        </tr>
+    <%end%>
+</table>
+
+<h2>Create a new puppy:</h2>
+
+<form action="/puppy" method="post">
+    <label>Name:</label> <input type='text' name='name'>
+    <label>Breed:</label> <input type='text' name='breed'>
+    <input type='submit'>
+</form>
